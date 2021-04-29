@@ -151,7 +151,8 @@ def vocalize(n_clicks,value):
     # melgan.load_state_dict(checkpoint["model_g"])
     # melgan.eval(inference=False)
 
-    counter = len(os.listdir('/assets'))
+    with open('/assets/counter.txt','r') as f:
+        counter = int(f.read())
     print(f'number of files : {counter}')
     
     print('Processing text')
@@ -191,6 +192,8 @@ def vocalize(n_clicks,value):
     sf.write(os.path.join(audio_folder,f'{counter}.wav'), audio.detach().cpu().numpy()[0], HPStft.sample_rate)
     counter +=1
     # time.sleep(10)
+    with open('/assets/counter.txt','w') as f:
+        f.write(str(counter))
 
     return f'/assets/{counter-1}.wav'
 
