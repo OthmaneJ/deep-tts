@@ -30,4 +30,4 @@ barbar
 fastdtw
 g2p-en
 pytorch-ignite
-yaml
+PyYAML
