@@ -151,7 +151,7 @@ def vocalize(n_clicks,value):
     # melgan.load_state_dict(checkpoint["model_g"])
     # melgan.eval(inference=False)
 
-    counter = len(os.listdir('./assets'))
+    counter = len(os.listdir('/assets'))
     print(f'number of files : {counter}')
     
     print('Processing text')
@@ -185,14 +185,14 @@ def vocalize(n_clicks,value):
 
     print('Saving audio')
     # TODO: cut audios to proper length
-    audio_folder = './assets'
+    audio_folder = '/assets'
     # for i,a in enumerate(audio.detach().cpu().numpy()):
         # write_wav(os.path.join(audio_folder,f'{i}.wav'), a, HPStft.sample_rate, norm=False)
     sf.write(os.path.join(audio_folder,f'{counter}.wav'), audio.detach().cpu().numpy()[0], HPStft.sample_rate)
     counter +=1
     # time.sleep(10)
 
-    return f'./assets/{counter-1}.wav'
+    return f'/assets/{counter-1}.wav'
 
 @app.callback(
     dash.dependencies.Output("rating-message", "value"),
