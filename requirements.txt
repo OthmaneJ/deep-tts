@@ -17,7 +17,7 @@ numpy==1.19.4; platform_system != "Windows"
 #scipy>=1.0.0
 tqdm
 sounddevice
-SoundFile
+#SoundFile
 Unidecode
 inflect
 #PyQt5
