@@ -25,3 +25,4 @@ multiprocess
 numba
 tensorboard
 #webrtcvad; platform_system != "Windows"
+gitpython
