@@ -139,17 +139,17 @@ def vocalize(n_clicks,value):
     
     input_text = value
 
-    # print('Loading model checkpoints')
-    # m = SpeedySpeech(
-    #     device=device
-    # ).load(speedyspeech_checkpoint, map_location=device)
-    # m.eval()
+    print('Loading model checkpoints')
+    m = SpeedySpeech(
+        device=device
+    ).load(speedyspeech_checkpoint, map_location=device)
+    m.eval()
 
-    # checkpoint = torch.load(melgan_checkpoint, map_location=device)
-    # hp = HParam("speech/melgan/config/default.yaml")
-    # melgan = Generator(hp.audio.n_mel_channels).to(device)
-    # melgan.load_state_dict(checkpoint["model_g"])
-    # melgan.eval(inference=False)
+    checkpoint = torch.load(melgan_checkpoint, map_location=device)
+    hp = HParam("speech/melgan/config/default.yaml")
+    melgan = Generator(hp.audio.n_mel_channels).to(device)
+    melgan.load_state_dict(checkpoint["model_g"])
+    melgan.eval(inference=False)
 
     with open('./counter.txt','r') as f:
         counter = int(f.read())
@@ -211,16 +211,16 @@ def print_rating(n_clicks,rating):
 
 if __name__ == "__main__":
 
-    print('Loading model checkpoints')
-    m = SpeedySpeech(
-        device=device
-    ).load(speedyspeech_checkpoint, map_location=device)
-    m.eval()
+    # print('Loading model checkpoints')
+    # m = SpeedySpeech(
+    #     device=device
+    # ).load(speedyspeech_checkpoint, map_location=device)
+    # m.eval()
 
-    checkpoint = torch.load(melgan_checkpoint, map_location=device)
-    hp = HParam("speech/melgan/config/default.yaml")
-    melgan = Generator(hp.audio.n_mel_channels).to(device)
-    melgan.load_state_dict(checkpoint["model_g"])
-    melgan.eval(inference=False)
+    # checkpoint = torch.load(melgan_checkpoint, map_location=device)
+    # hp = HParam("speech/melgan/config/default.yaml")
+    # melgan = Generator(hp.audio.n_mel_channels).to(device)
+    # melgan.load_state_dict(checkpoint["model_g"])
+    # melgan.eval(inference=False)
 
     app.run_server(debug=False)
