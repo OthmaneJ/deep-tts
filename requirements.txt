@@ -1,0 +1,26 @@
+#-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.8.1+cpu
+torchvision==0.9.1+cpu
+gunicorn
+umap-learn
+visdom
+dash
+dash-auth
+dash-core-components
+dash-html-components
+dash-renderer
+decorator==4.3.0
+librosa>=0.8.0
+matplotlib>=3.3.0
+numpy==1.19.3; platform_system == "Windows"
+numpy==1.19.4; platform_system != "Windows"
+scipy>=1.0.0
+tqdm
+sounddevice
+#SoundFile
+Unidecode
+inflect
+PyQt5
+multiprocess
+numba
+#webrtcvad; platform_system != "Windows"
