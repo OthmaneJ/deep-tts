@@ -29,3 +29,4 @@ gitpython
 barbar
 fastdtw
 g2p-en
+pytorch-ignite
