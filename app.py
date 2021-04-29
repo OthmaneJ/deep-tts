@@ -139,6 +139,12 @@ def vocalize(n_clicks,value):
     
     input_text = value
 
+    speedyspeech_checkpoint = 'checkpoints/speedyspeech.pth'
+    melgan_checkpoint = 'checkpoints/melgan.pth'
+    device = 'cpu'
+    audio_folder = 'assets'
+    input_text = "Get a complete visualization of your app in a team-based continuous delivery environment"
+
     print('Loading model checkpoints')
     m = SpeedySpeech(
         device=device
