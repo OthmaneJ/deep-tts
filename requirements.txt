@@ -31,3 +31,4 @@ fastdtw
 g2p-en
 pytorch-ignite
 PyYAML
+pydub

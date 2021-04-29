@@ -1,4 +1,4 @@
-import argparse, sys, os, time
+import argparse, sys, os
 import torch
 # from librosa.output import write_wav
 
@@ -10,9 +10,6 @@ from melgan.utils.hparams import HParam
 from hparam import HPStft, HPText
 from utils.text import TextProcessor
 from functional import mask
-
-import soundfile as sf
-
 import math
 
 import dash
@@ -26,12 +23,10 @@ import dash_core_components as dcc
 # from vocoder import inference as vocoder
 from pathlib import Path
 # import numpy as np
-import librosa
 import scipy
-import pydub
 import soundfile as sf
 import json
-import time
+# import time
 
 # from librosa.output import write_wav
 
