@@ -245,8 +245,8 @@ class SpeedySpeech(nn.Module):
         self.step = 0
         self.durations_file = durations_file
 
-        repo = git.Repo(search_parent_directories=True)
-        self.git_commit = repo.head.object.hexsha
+        # repo = git.Repo(search_parent_directories=True)
+        # self.git_commit = repo.head.object.hexsha
 
     def forward(self, x):
         """
@@ -304,7 +304,7 @@ class SpeedySpeech(nn.Module):
                 'step': self.step,
                 'state_dict': self.state_dict(),
                 'optimizer': self.optimizer.state_dict(),
-                'git_commit': self.git_commit
+                # 'git_commit': self.git_commit
             },
             self.checkpoint)
 
@@ -317,9 +317,9 @@ class SpeedySpeech(nn.Module):
         self.step = checkpoint['step']
         self.load_state_dict(checkpoint['state_dict'])
         self.optimizer.load_state_dict(checkpoint['optimizer'])
-        commit = checkpoint['git_commit']
-        if commit != self.git_commit:
-            print(f'Warning: the loaded checkpoint was trained on commit {commit}, but you are on {self.git_commit}')
+        # commit = checkpoint['git_commit']
+        # if commit != self.git_commit:
+        #     print(f'Warning: the loaded checkpoint was trained on commit {commit}, but you are on {self.git_commit}')
         self.checkpoint = None  # prevent overriding old checkpoint
         return self
 
