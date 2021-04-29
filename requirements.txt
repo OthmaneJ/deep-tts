@@ -27,3 +27,4 @@ tensorboard
 #webrtcvad; platform_system != "Windows"
 gitpython
 barbar
+fastdtw
