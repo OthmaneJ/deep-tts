@@ -144,6 +144,11 @@ class SpeedySpeechInference:
         audio = np.int16(audio * x)
         return audio
 
+speedyspeech = SpeedySpeechInference(
+    speedyspeech_checkpoint,
+    melgan_checkpoint,
+    device
+)
 
 # Transcribe audio
 @app.callback(
@@ -171,12 +176,6 @@ def display_warning(n_clicks,value):
 def vocalize(n_clicks,value):
     
     print('Saving audio')
-
-    speedyspeech = SpeedySpeechInference(
-        speedyspeech_checkpoint,
-        melgan_checkpoint,
-        device
-    )
     
     input_text = value
     buf = BytesIO()
